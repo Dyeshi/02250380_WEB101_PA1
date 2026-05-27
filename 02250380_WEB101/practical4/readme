@@ -1,0 +1,203 @@
+TikTok Frontend–Backend Integration
+
+A full-stack TikTok-style social media application built using Next.js, Express.js, and REST APIs.
+This project connects a modern frontend with a backend server to implement authentication, video feeds, social interactions, user discovery, and personalized content.
+
+Features
+User Authentication (Login/Register)
+Video Feed with Real Backend Data
+Like and Unlike Videos
+Comment System
+Follow and Unfollow Users
+Personalized “Following” Feed
+Explore Users Page
+Dynamic User Profiles
+Video Upload Functionality
+API Integration using Axios
+Toast Notifications
+Responsive UI with Next.js
+Technologies Used
+Frontend
+Next.js
+React
+Axios
+React Hot Toast
+JWT Decode
+CSS
+Backend
+Express.js
+Node.js
+Prisma ORM
+JWT Authentication
+
+Project Structure
+tiktok-project/
+│
+├── frontend/
+│   ├── src/
+│   │   ├── app/
+│   │   ├── components/
+│   │   ├── contexts/
+│   │   ├── services/
+│   │   └── lib/
+│   │
+│   ├── public/
+│   └── package.json
+│
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── routes/
+│   │   ├── middleware/
+│   │   ├── models/
+│   │   └── utils/
+│   │
+│   ├── prisma/
+│   └── package.json
+│
+└── README.md
+Installation & Setup
+Clone the Repository
+git clone <repository-url>
+Backend Setup
+Navigate to Backend Folder
+cd backend
+Install Dependencies
+npm install
+Create Environment File
+
+Create .env
+
+PORT=8000
+JWT_SECRET=your_secret_key
+DATABASE_URL=your_database_url
+Generate Prisma Client
+npx prisma generate
+Start Backend Server
+npm run dev
+
+Backend runs on:
+
+http://localhost:8000
+🌐 Frontend Setup
+Navigate to Frontend Folder
+cd frontend
+Install Dependencies
+npm install
+Create Environment File
+
+Create .env.local
+
+NEXT_PUBLIC_API_URL=http://localhost:8000/api
+Start Frontend
+npm run dev
+
+Frontend runs on:
+
+http://localhost:3000
+🔄 Project Flow
+User
+ ↓
+Next.js Frontend
+ ↓
+Axios API Requests
+ ↓
+Express.js Backend
+ ↓
+Controllers
+ ↓
+Prisma ORM
+ ↓
+Database
+ ↓
+Response Sent Back
+ ↓
+Frontend UI Updates
+🧩 Functional Dependencies
+Dependency	Purpose
+express	Backend server framework
+cors	Enables frontend-backend communication
+dotenv	Environment variable management
+axios	API request handling
+jsonwebtoken	JWT authentication
+jwt-decode	Decode JWT token on frontend
+prisma	Database ORM
+react-hot-toast	Notifications
+nodemon	Auto-restart development server
+
+ Authentication Flow
+User Login/Register
+ ↓
+Backend Validates User
+ ↓
+JWT Token Generated
+ ↓
+Token Stored in Local Storage
+ ↓
+Axios Automatically Attaches Token
+ ↓
+Protected Routes Become Accessible
+🎥 Video Feed Workflow
+Frontend Requests Videos
+ ↓
+Axios Sends API Call
+ ↓
+Backend Fetches Videos
+ ↓
+Database Returns Video Data
+ ↓
+Frontend Displays Feed
+👥 Social Features
+Follow System
+Users can follow/unfollow others
+Following feed only shows videos from followed users
+Likes & Comments
+Real-time video interaction
+Backend updates database instantly
+User Discovery
+Explore page for finding users
+Dynamic user profiles with uploaded videos
+API Endpoints
+Users
+Method	Endpoint	Description
+GET	/api/users	Get all users
+GET	/api/users/:id	Get user by ID
+POST	/api/users/register	Register user
+POST	/api/users/login	Login user
+POST	/api/users/:id/follow	Follow user
+Videos
+Method	Endpoint	Description
+GET	/api/videos	Get all videos
+GET	/api/videos/:id	Get video by ID
+POST	/api/videos	Upload video
+POST	/api/videos/:id/likes	Like video
+Key Concepts Learned
+REST API Integration
+JWT Authentication
+React Context API
+Axios Interceptors
+Backend–Frontend Communication
+Prisma ORM Usage
+Protected Routes
+Dynamic Routing in Next.js
+Social Media Application Architecture
+Testing
+
+Tested Features:
+
+User Registration
+User Login/Logout
+Video Upload
+Follow/Unfollow
+Like/Unlike
+Personalized Feed
+Dynamic User Profiles
+Authentication Protection
+
+Future Improvements
+Real-time notifications
+Video streaming optimization
+Live chat
+Mobile responsiveness enhancements
+Cloud video storage
+AI-based recommendations
